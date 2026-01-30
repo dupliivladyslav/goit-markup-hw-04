@@ -82,7 +82,7 @@ main {
 }
 
 .header-link {
-  display: block;
+  display: inline-block;
   padding: 24px 0;
   font-weight: 500;
   font-size: 16px;
@@ -93,8 +93,25 @@ main {
 .header-link:hover {
   color: #404bbf;
 }
+
 .header-link:focus {
   color: #404bbf;
+}
+
+.header-link.studio {
+  position: relative;
+  color: #404bbf;
+}
+
+.header-link.studio::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 
 .address {
@@ -128,6 +145,13 @@ main {
 .hero-section {
   background-color: #2e2f42;
   padding: 188px 0;
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-section-title {
@@ -162,8 +186,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding-top: 188px;
-  padding-bottom: 188px; */
   gap: 48px;
 }
 
@@ -204,12 +226,20 @@ main {
   max-width: 264px;
 }
 
+.benefits-section-icon-box {
+  padding: 24px 100px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  background-color: #f4f4fd;
+}
+
 .benefits-section-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 .benefits-section-text {
@@ -248,8 +278,12 @@ main {
   justify-content: center;
   border-radius: 0 0 4px 4px;
   width: 264px;
-  height: 380px;
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
+
 .team-section-img {
   width: 264px;
   height: 260px;
@@ -257,6 +291,31 @@ main {
 
 .team-section-text-container {
   padding: 32px 16px;
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.social-link {
+  background-color: #4d5ae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 500ms;
+}
+
+.social-link:hover {
+  background-color: #404bbf;
+}
+
+.social-icon {
+  fill: #f4f4fd;
 }
 
 .team-section-names {
@@ -305,6 +364,15 @@ main {
 .portfolio-section-item {
   display: inline-block;
   justify-content: center;
+  /* box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08); */
+}
+
+.portfolio-photo-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio-section-text-container {
@@ -317,6 +385,31 @@ main {
   width: 360px;
   height: 120px;
   padding: 32px 16px;
+}
+
+.portfolio-section-overlay-text {
+  position: absolute;
+  top: 0;
+  padding: 40px 32px 164px 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-section-item:hover .portfolio-section-overlay-text {
+  transform: translateY(0);
+}
+
+.portfolio-section-item:hover {
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-section-headers {
@@ -357,10 +450,37 @@ main {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  width: 264px;
+  max-width: 264px;
+}
+
+.footer-socials-container {
+  display: block;
+  max-width: 208px;
+  margin-left: 120px;
+}
+
+.footer-social-media-header {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  padding-bottom: 16px;
+}
+
+.footer-main-container {
+  display: block;
 }
 
 .footer-container {
-  display: block;
-  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.socials.footer-socials {
+  gap: 16px;
+}
+
+.social-link.footer-social-link:hover {
+  background-color: #31d0aa;
 }
