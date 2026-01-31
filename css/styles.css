@@ -516,7 +516,7 @@ main {
   background-color: #31d0aa;
 }
 
-.social-link.footer-social-link:hover {
+.social-link.footer-social-link:focus {
   background-color: #31d0aa;
 }
 
@@ -536,6 +536,7 @@ main {
 }
 
 .modal {
+  position: absolute;
   border-radius: 4px;
   width: 408px;
   min-height: 584px;
@@ -545,4 +546,22 @@ main {
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
   padding: 72px 24px 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #d0d2e3;
+  background-color: #e7e9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-cross-icon {
+  fill: #2e2f42;
 } */
